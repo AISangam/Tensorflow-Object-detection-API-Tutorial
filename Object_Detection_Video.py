@@ -29,7 +29,7 @@ DOWNLOAD_BASE = 'http://download.tensorflow.org/models/object_detection/'
 PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
 
 # List of the strings that is used to add correct label for each box.
-PATH_TO_LABELS = os.path.join('/home/vishnu/d/work/clients/Direct/sheetal/models/research/object_detection/data', 'mscoco_label_map.pbtxt')
+PATH_TO_LABELS = os.path.join('data', 'mscoco_label_map.pbtxt')
 NUM_CLASSES = 90
 
 
@@ -109,7 +109,7 @@ with detection_graph.as_default():
 #      plt.imshow(image_np)
       cv2.namedWindow('image', cv2.WINDOW_NORMAL)
       cv2.imshow('image',image_np)
-      if cv2.waitKey(25) & 0xFF == ord('q'):
+      if cv2.waitKey(1) & 0xFF == ord('q'):
           cv2.destroyAllWindows()
           cap.release()
           break
